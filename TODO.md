@@ -24,3 +24,6 @@
 - [Matrix JS SDK](https://matrix.org/docs/guides/usage-of-the-matrix-js-sdk)
 - [matrix-appservice-discord](https://github.com/Half-Shot/matrix-appservice-discord)
 - [matrix-hookshot](https://github.com/Half-Shot/matrix-hookshot)
+## messages format
+- [element-client](https://its.h-da.io/element-docs/en/messaging/formatting/)
+- [matrix messages types](https://spec.matrix.org/v1.2/client-server-api/#mroommessage-msgtypes)
