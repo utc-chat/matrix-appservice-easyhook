@@ -7,6 +7,7 @@
 - The bot need to run in a docker container, with docker-compose. 
 - The appservice should store data in the matrix postgreSQL database.
 - The project should be well documented and commented.
+- The project should be i18n compatible, allow translation to different languages to be used in webUI.
 
 # TODOs
 - [ ] webhooks listener
