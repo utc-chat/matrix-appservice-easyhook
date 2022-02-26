@@ -80,3 +80,7 @@ When webhook receive or fetch a JSON like downbelow
     }
 }
 ```
+
+All the objects and keys need to be parsed and accessible to be used in output messages formatter. 
+This can either to be done by a dev defined script, or a easy to use UI based formatter that compose a new message by using keys provided in JSON.
+
