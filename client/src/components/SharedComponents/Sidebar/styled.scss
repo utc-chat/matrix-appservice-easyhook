@@ -1,0 +1,79 @@
+.sidebar-sticky {
+  position: sticky;
+  top: 48px;
+  height: calc(100vh - 48px);
+  padding-top: .5rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  .sidebar-heading {
+    font-size: .75rem;
+    text-transform: uppercase;
+  }
+  
+  .active {
+    .nav-link {
+      color: #007bff;
+    }    
+    .feather {
+      color: inherit !important;
+    }
+  }
+  
+  .button-link {
+    border: 0;
+    background: transparent;
+  }
+
+  .nav-link {
+    color: #333;
+    font-weight: 500;    
+    cursor: pointer;
+    border: 0;
+    background: #f8f9fa;
+
+    .feather {
+      margin-right: 4px;
+      color: #999;
+      width: 16px;
+      height: 16px;
+      vertical-align: text-bottom;
+    }
+
+    &:hover {
+      .feather {
+        color: #333;
+      }
+    }
+  }  
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+@media screen and (max-width: 799px) {
+  .fixed_sidebar {
+    display: none;
+  }
+}
+@media only screen and (min-width: 767px) {
+  .sidebar_toggler {
+    display: none!important;
+  }
+}

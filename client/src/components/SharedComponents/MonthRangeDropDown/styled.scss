@@ -1,0 +1,41 @@
+.date-range-dropdown {
+
+  .dropdown-menu {
+    min-width: 270px;
+  }
+
+  .dropdown-toggle {
+    width: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .custom-range {    
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  
+    p {
+      cursor: pointer;
+      margin: 0;
+      padding: .25rem 1.5rem;  
+    }
+  
+    .date-range-picker-div {
+      position: relative;
+      display: flex;
+      align-items: center;    
+      padding: .25rem 1.5rem;  
+    
+      .react-datepicker-wrapper {
+        // max-width: 100px;
+        input {
+          width: 100px;
+          padding-left: 6px;
+          padding-right: 6px;
+        }
+      }
+    }
+  }  
+}
