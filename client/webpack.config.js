@@ -1,13 +1,12 @@
 const { truncate } = require('lodash');
 const path = require('path');
 
-module.ecport = {
-
+module.export = {
     devServer: {
+        compress: true,
+        public: 'chat.zkx.ca',
         disableHostCheck: true,
         allowedHosts: 'all',
-        compress: true,
-        public: 'store-client-nestroia1.c9users.io'
     }
 
 }

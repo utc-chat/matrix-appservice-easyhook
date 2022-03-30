@@ -8,7 +8,7 @@ var _ = require('lodash');
 router.post('/', WebhookController.index);
 
 async function init() {
-    const rules = await models.Rule.findAll({ where: { type: "webhook" } });
+    const rules = await models.Rule.findAll({ where: { type: "webhook", active: true } });
 
     for (rule of rules) {
         router.post(rule.dataValues.webhookAddress, function (req, res) {

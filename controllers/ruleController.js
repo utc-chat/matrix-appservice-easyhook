@@ -21,6 +21,7 @@ exports.save = async function (req, res) {
 				cron: data.cron,
 				every: data.every,
 				duration: data.duration,
+				active: data.active,
 			}
 		})
 	} else {
@@ -34,6 +35,7 @@ exports.save = async function (req, res) {
 		item.cron = data.cron;
 		item.every = data.every;
 		item.duration = data.duration;
+		item.active = data.active;
 		await item.save();
 	}
 
@@ -47,6 +49,6 @@ exports.delete = async function (req, res) {
 	await models.Rule.destroy({ where: { id: req.params.id } })
 	const result = await models.Rule.findAll()
 	res.json(result);
-	
+
 	process.exit(1);
 };

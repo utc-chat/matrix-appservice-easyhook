@@ -5,7 +5,7 @@ var _ = require('lodash');
 const matrixClient = require('../config/matrixClient');
 
 const init_socket = async () => {
-    const rules = await models.Rule.findAll({ where: { type: 'websocket' } })
+    const rules = await models.Rule.findAll({ where: { type: 'websocket', active: true } })
 
     rules.forEach(rule => {
         let cron;

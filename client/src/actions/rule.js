@@ -24,7 +24,7 @@ export const saveRuleAction = (data) => async dispatch => {
     dispatch({ type: REQUEST_SAVE_RULE });
     try {
         const res = await axios.post('/rule/save', { data }, AXIOS_CONFIG)
-        toast.info('New Rule Added!', {
+        toast.info('Rule has been saved!', {
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,

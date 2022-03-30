@@ -11,20 +11,22 @@ module.exports = {
         sendAs: 1,
         outputMessage: "<p>Current $symbol price is $bidPrice</p>",
         every: 5,
-        duration: "m"
+        duration: "m",
+        active: true
       },
       {
         name: 'Webhook',
         type: "webhook",
         webhookAddress: 'https://matrix.chat.zkx.ca/appservice-webhooks/api/v1/matrix/hook/SsR2Rnpk76pQ1Ltk5SG06RpqL55ADMZgqsURKaNWLV8hSMcpcM2gbGKqi2VweSGO',
         outputMessage: `{
-            "text": "Hello world!",
-            "format": "plain",
-            "displayName": "My Cool Webhook",
-            "avatar_url": "http://i.imgur.com/IDOBtEJ.png"
+          "text": "Hello world!",
+          "format": "plain",
+          "displayName": "My Cool Webhook",
+          "avatar_url": "http://i.imgur.com/IDOBtEJ.png"
         }`,
         every: 5,
-        duration: "m"
+        duration: "m",
+        active: true
       }
     ], {});
   },

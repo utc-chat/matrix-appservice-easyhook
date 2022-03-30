@@ -8,16 +8,18 @@ import Sidebar from '../SharedComponents/Sidebar'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 import "antd/dist/antd.css";
-import { Popconfirm } from 'antd';
+import { Popconfirm, Switch } from 'antd';
 import moment from 'moment'
 import {
   deleteRuleAction,
   getRuleAction,
+  saveRuleAction,
 } from '../../actions/rule'
 
 const RulesPage = ({
   deleteRuleAction,
   getRuleAction,
+  saveRuleAction,
 }) => {
 
   useEffect(() => {
@@ -32,6 +34,13 @@ const RulesPage = ({
 
   const handleClickDelete = (e, id) => {
     deleteRuleAction(id)
+  }
+
+  const onActiveChange = (checked, item) => {
+    item.active = checked
+    delete item.createdAt
+    delete item.updatedAt
+    saveRuleAction(item)
   }
 
   return (
@@ -54,6 +63,7 @@ const RulesPage = ({
                     <th>Type</th>
                     <th>Entry Point</th>
                     <th>Every</th>
+                    <th>Active</th>
                     <th>Action</th>
                   </tr>
                 </thead>
@@ -64,13 +74,10 @@ const RulesPage = ({
                         <td> {moment(item.createdAt).format('YYYY-MM-DD hh:mm:ss')} </td>
                         <td> {item.name} </td>
                         <td> {item.type} </td>
-                        <td> {item.webhookAddress} </td>
+                        <td style={{ wordBreak: 'break-all', width: '50%' }}>{item.webhookAddress}</td>
                         <td> {item.every + item.duration} </td>
+                        <td> <Switch defaultChecked={item.active} onChange={checked => onActiveChange(checked, item)} />{item.active} </td>
                         <td>
-                          {/* <button onClick={e => showEditModal(item)}>
-                            <FontAwesomeIcon icon={faEdit} />
-                          </button> */}
-                          {/* &nbsp; */}
                           <Popconfirm
                             placement="topRight"
                             title="Are you sure to delete this rule?"
@@ -101,5 +108,6 @@ export default withRouter(
   connect(null, {
     deleteRuleAction,
     getRuleAction,
+    saveRuleAction,
   })(RulesPage)
 )

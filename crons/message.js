@@ -5,7 +5,7 @@ var _ = require('lodash');
 const matrixClient = require('../config/matrixClient');
 
 const init_crons = async () => {
-    const rules = await models.Rule.findAll({ where: { type: 'json' } })
+    const rules = await models.Rule.findAll({ where: { type: 'json', active: true } })
 
     rules.forEach(rule => {
         let cron;

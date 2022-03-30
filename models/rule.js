@@ -11,6 +11,7 @@ module.exports = function (sequelize, DataTypes) {
     cron: DataTypes.INTEGER,
     every: DataTypes.INTEGER,
     duration: DataTypes.STRING,
+    active: DataTypes.BOOLEAN,
   }, {
     sequelize,
     modelName: 'Rule',
