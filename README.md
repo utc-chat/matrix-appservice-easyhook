@@ -59,6 +59,13 @@ npm run dev
 ```
 
 ### For production
+
+Start server
 ```
 npm start
+```
+
+Stop server
+```
+npm stop
 ```

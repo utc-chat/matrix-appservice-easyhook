@@ -8,7 +8,8 @@
         "dev": "concurrently \"npm run server\" \"npm run client\"",
         "api": "pm2 start ./bin/restart-handler.js --name 'api'",
         "ui": "cd client && pm2 start ./node_modules/react-scripts/scripts/start.js --name 'ui'",
-        "start": "concurrently \"npm run api\" \"npm run ui\""
+        "start": "concurrently \"npm run api\" \"npm run ui\"",
+        "stop": "pm2 delete all"
     },
     "dependencies": {
         "axios": "^0.26.1",
